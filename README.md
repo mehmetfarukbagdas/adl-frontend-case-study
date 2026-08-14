@@ -4,7 +4,7 @@ ADL web sitesindeki kategori sayfası baz alınarak hazırlanmış bir frontend 
 
 ## Demo
 
-Vercel: 
+Vercel: https://adl-frontend-case-study.vercel.app/
 
 ## Proje
 
