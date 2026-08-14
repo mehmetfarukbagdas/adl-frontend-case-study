@@ -96,42 +96,40 @@ const ProductCard = ({ product, compact = false }: ProductCardProps) => {
           </div>
         )}
 
-        {!compact && (
-          <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-3 py-2.5 z-20">
-            <button
-              className="w-7 h-7 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow transition text-gray-700 hover:text-black cursor-pointer"
-              aria-label="Sepete ekle"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 5v14M5 12h14" />
-              </svg>
-            </button>
+        <div className={`absolute bottom-0 left-0 right-0 items-center justify-between px-3 py-2.5 z-20 ${compact ? "hidden md:flex" : "flex"}`}>
+          <button
+            className="w-7 h-7 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow transition text-gray-700 hover:text-black cursor-pointer"
+            aria-label="Sepete ekle"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 5v14M5 12h14" />
+            </svg>
+          </button>
 
-            <button
-              className={`w-7 h-7 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow transition cursor-pointer ${saved ? "text-black" : "text-gray-400 hover:text-black"}`}
-              aria-label="Favorilere ekle"
-              onClick={(e) => {
-                e.stopPropagation();
-                setSaved(!saved);
-              }}
+          <button
+            className={`w-7 h-7 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow transition cursor-pointer ${saved ? "text-black" : "text-gray-400 hover:text-black"}`}
+            aria-label="Favorilere ekle"
+            onClick={(e) => {
+              e.stopPropagation();
+              setSaved(!saved);
+            }}
+          >
+            <svg
+              className="w-4 h-4"
+              fill={saved ? "currentColor" : "none"}
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-              <svg
-                className="w-4 h-4"
-                fill={saved ? "currentColor" : "none"}
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M5 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16l-7-3.5L5 21V5z"
-                />
-              </svg>
-            </button>
-          </div>
-        )}
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M5 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16l-7-3.5L5 21V5z"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
 
       <div className="mt-2 px-0.5">

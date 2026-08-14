@@ -64,7 +64,7 @@ const FilterSortBar = ({
   onGridViewChange: (view: GridView) => void;
   views: GridView[];
 }) => (
-  <div className="flex w-full items-center justify-between">
+  <div className="flex w-full md:w-auto items-center justify-between md:gap-8">
     <button className="text-[13px] font-medium text-black transition cursor-pointer hover:opacity-70">
       Filtreler &amp; Sıralama
     </button>
@@ -85,17 +85,17 @@ const ProductGrid = () => {
     <section className="w-full pt-2 pb-8">
       <div className="mb-5 px-6 md:mb-6 md:px-8 lg:px-12">
         <div className="hidden items-center justify-between gap-4 md:flex">
-          <h1 className="text-[22px] font-normal tracking-tight text-gray-900">
-            Yeniler{" "}
-            <span className="ml-0.5 text-[15px] text-gray-400">({filtered.length}) sonuç</span>
+          <h1 className="flex items-center gap-1.5 text-[22px] font-normal tracking-tight text-gray-900 shrink-0">
+            Yeniler
+            <span className="text-[15px] text-gray-400">({filtered.length}) sonuç</span>
           </h1>
           <FilterSortBar gridView={gridView} onGridViewChange={setGridView} views={[1, 2, 3, 4]} />
         </div>
 
         <div className="md:hidden">
-          <h1 className="text-[19px] font-normal tracking-tight text-gray-900">
-            Yeniler{" "}
-            <span className="ml-0.5 text-[13px] text-gray-400">({filtered.length}) sonuç</span>
+          <h1 className="flex items-center gap-1.5 text-[19px] font-normal tracking-tight text-gray-900 shrink-0">
+            Yeniler
+            <span className="text-[13px] text-gray-400">({filtered.length}) sonuç</span>
           </h1>
           <div className="mt-3">
             <FilterSortBar gridView={gridView} onGridViewChange={setGridView} views={[1, 2, 4]} />
